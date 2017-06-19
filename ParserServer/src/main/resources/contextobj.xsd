@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<xs:schema xmlns:tns="info:ofi/fmt:xml:xsd:ctx" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="info:ofi/fmt:xml:xsd:ctx" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import />
+  <xs:element name="context-objects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context-object">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="referent">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="metadata-by-val">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="format" type="xs:string" />
+                          <xs:element name="metadata">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="book" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="timestamp" type="xs:dateTime" use="required" />
+            <xs:attribute name="encoding" type="xs:string" use="required" />
+            <xs:attribute name="version" type="xs:string" use="required" />
+            <xs:attribute name="identifier" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

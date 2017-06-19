@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<xs:schema xmlns:tns="info:ofi/fmt:xml:xsd:book" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="info:ofi/fmt:xml:xsd:book" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="atitle" type="xs:string" />
+  <xs:element name="date" type="xs:unsignedShort" />
+  <xs:element name="btitle" type="xs:string" />
+  <xs:element name="genre" type="xs:string" />
+  <xs:element name="pages" type="xs:string" />
+  <xs:element name="au" type="xs:string" />
+  <xs:element name="place" type="xs:string" />
+  <xs:element name="spage" type="xs:unsignedByte" />
+  <xs:element name="pub" type="xs:string" />
+  <xs:element name="epage" type="xs:unsignedByte" />
+</xs:schema>

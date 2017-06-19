@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="info:ofi/fmt:xml:xsd:ctx" xmlns:rft="info:ofi/fmt:xml:xsd:book" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="info:ofi/fmt:xml:xsd:ctx" />
+  <xs:import namespace="info:ofi/fmt:xml:xsd:book" />
+  <xs:element name="citations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="citation">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="authors">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element maxOccurs="unbounded" name="author" type="xs:string" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="title" type="xs:string" />
+                <xs:element name="booktitle" type="xs:string" />
+                <xs:element minOccurs="0" name="publisher" type="xs:string" />
+                <xs:element minOccurs="0" name="location" type="xs:string" />
+                <xs:element name="pages" type="xs:string" />
+                <xs:element name="year" type="xs:unsignedShort" />
+                <xs:element name="raw_string" type="xs:string" />
+              </xs:sequence>
+              <xs:attribute name="valid" type="xs:boolean" use="required" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element ref="ctx:context-objects" />
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="book">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="rft:place" />
+        <xs:element ref="rft:atitle" />
+        <xs:element minOccurs="0" ref="rft:spage" />
+        <xs:element ref="rft:date" />
+        <xs:element ref="rft:btitle" />
+        <xs:element ref="rft:genre" />
+        <xs:element minOccurs="0" ref="rft:pub" />
+        <xs:element minOccurs="0" ref="rft:epage" />
+        <xs:element minOccurs="0" ref="rft:pages" />
+        <xs:element maxOccurs="unbounded" ref="rft:au" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
